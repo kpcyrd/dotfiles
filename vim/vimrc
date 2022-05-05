@@ -1,0 +1,18 @@
+syn on
+set nu
+set hlsearch
+set incsearch
+colo peachpuff
+
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
+
+autocmd FileType make setlocal noexpandtab
+autocmd FileType go setlocal noexpandtab
+autocmd FileType scd setlocal noexpandtab
+
+let g:ale_linters = {'rust': [],  'yaml': []}
+"let g:ale_linters_ignore = {'rust': ['cargo']}

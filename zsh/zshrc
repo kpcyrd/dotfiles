@@ -1,0 +1,51 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+export PATH="$PATH:$HOME/bin:$HOME/.cargo/bin"
+export VISUAL=vim
+export EDITOR=vim
+
+#alias ls='ls --color=auto'
+alias ls='exa -g --git -la'
+alias ncdu='ncdu --color dark'
+PS1='[%n@%M %1~]%% '
+
+zstyle ':completion:*' menu select
+
+bindkey -e
+bindkey '\e[1;5D' backward-word
+bindkey '\e[1;5C' forward-word
+bindkey "^[[3~"   delete-char
+bindkey "^[3;5~"  delete-char
+
+setopt interactivecomments
+# remove duplicates from shell history
+setopt histignorealldups
+# display pid when suspending processes
+setopt longlistjobs
+# report background job status immediately
+setopt notify
+# complete in words instead of just at the end
+setopt completeinword
+# disable beeping
+setopt nobeep
+
+if [ -n "$DESKTOP_SESSION" ]; then
+	eval $(gnome-keyring-daemon --start)
+	export SSH_AUTH_SOCK
+fi
+
+if [ -d ~/.zsh_completions ]; then
+    fpath=(~/.zsh_completions $fpath)
+fi
+
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/user/.zshrc'
+zstyle ':completion:*' special-dirs true
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
