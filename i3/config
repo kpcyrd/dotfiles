@@ -11,6 +11,7 @@
 
 set $mod Mod4
 set $alt Mod1
+set $hyper Mod3
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -21,7 +22,7 @@ font pango:monospace 8
 #font pango:DejaVu Sans Mono 8
 
 ### theme
-new_window 1pixel
+default border pixel
 hide_edge_borders both
 workspace_auto_back_and_forth yes
 force_display_urgency_hint 500 ms
@@ -30,7 +31,8 @@ gaps inner 10
 gaps outer 5
 
 exec --no-startup-id xwallpaper --center wallpaper.jpg
-exec --no-startup-id dex -a
+exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id redshift
 bindsym Ctrl+$alt+l exec ~/bin/wmctl lock
 
@@ -127,6 +129,16 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -139,6 +151,16 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $hyper+1 workspace $ws11
+bindsym $hyper+2 workspace $ws12
+bindsym $hyper+3 workspace $ws13
+bindsym $hyper+4 workspace $ws14
+bindsym $hyper+5 workspace $ws15
+bindsym $hyper+6 workspace $ws16
+bindsym $hyper+7 workspace $ws17
+bindsym $hyper+8 workspace $ws18
+bindsym $hyper+9 workspace $ws19
+bindsym $hyper+0 workspace $ws20
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -151,6 +173,16 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $hyper+Shift+1 move container to workspace $ws11
+bindsym $hyper+Shift+2 move container to workspace $ws12
+bindsym $hyper+Shift+3 move container to workspace $ws13
+bindsym $hyper+Shift+4 move container to workspace $ws14
+bindsym $hyper+Shift+5 move container to workspace $ws15
+bindsym $hyper+Shift+6 move container to workspace $ws16
+bindsym $hyper+Shift+7 move container to workspace $ws17
+bindsym $hyper+Shift+8 move container to workspace $ws18
+bindsym $hyper+Shift+9 move container to workspace $ws19
+bindsym $hyper+Shift+0 move container to workspace $ws20
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

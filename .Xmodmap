@@ -1,0 +1,4 @@
+remove Lock = Caps_Lock
+keycode 66 shift = Hyper_L Caps_Lock
+remove mod4 = Hyper_L
+add Mod3 = Hyper_L
